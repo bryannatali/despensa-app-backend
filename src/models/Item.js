@@ -9,6 +9,10 @@ const ItemSchema = new Schema({
     bought: {
         type: Boolean,
         required: true,
+    },
+    category: {
+        type: Schema.Types.ObjectId,
+        ref: 'Category'
     }
 });
 

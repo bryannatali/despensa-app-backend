@@ -5,9 +5,9 @@ const MarketListSchema = new Schema({
         type: String,
         required: true,
     },
-    items: [{
+    categories: [{
         type: Schema.Types.ObjectId,
-        ref: 'Item',
+        ref: 'Category',
     }]
 });
 
