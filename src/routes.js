@@ -21,6 +21,7 @@ routes.delete('/marketlists/:_id', UserMarketListController.delete);
 routes.post('/marketlists/:market_list/items', MarketListItemController.store);
 routes.put('/marketlists/:market_list/items', MarketListItemController.update);
 
+routes.get('/categories', CategoryController.index);
 routes.post('/categories', CategoryController.store);
 
 module.exports = routes;

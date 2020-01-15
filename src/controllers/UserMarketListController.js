@@ -23,16 +23,14 @@ module.exports = {
         const { _id } = req.params;
 
         const marketList = await MarketList.findById(_id)
-        .populate([
-            {
+        .populate({
                 path: 'categories',
                 model: Category,
                 populate: {
                     path: 'items',
                     model: Item,
                 },
-            },
-        ]);
+            });
 
         return res.json(marketList);
     },

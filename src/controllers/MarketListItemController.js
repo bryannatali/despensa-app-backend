@@ -29,9 +29,12 @@ module.exports = {
 
         await category.save();
 
-        marketList.categories.push(category._id);
+        const index = marketList.categories.indexOf(category._id);
 
-        await marketList.save();
+        if(index === -1){
+            marketList.categories.push(category._id);
+            await marketList.save();
+        }
 
         return res.json(item);
     },
